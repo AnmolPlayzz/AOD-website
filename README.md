@@ -1,2 +1,2 @@
 # AOD-website
-owo
+development starting soon.
