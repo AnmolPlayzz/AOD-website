@@ -1,2 +1,2 @@
-# AOD-website
+# AoD-website
 development starting soon.
