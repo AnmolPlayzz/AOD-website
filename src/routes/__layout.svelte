@@ -93,6 +93,7 @@
 		color-scheme: dark;
 		--mica-tint: 0, 0%, 13%;
 		--mica-tint-opacity: 0.8;
+        --blurnav: 17px
 	}
 
 :global(.scroller) {
@@ -206,7 +207,7 @@
         top: 0;
         left: 0;
         background-color: rgba(26, 26, 26, 0.8);
-        backdrop-filter: blur(26px);
+        backdrop-filter: blur(var(--blurnav));
         z-index: 10;
     }
 
@@ -245,6 +246,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 20;
         }
 
         .drawer {
@@ -269,7 +271,7 @@
             align-content: start;
             background-color: rgba(26, 26, 26, 0.8);
             backdrop-filter: blur(50px);
-            z-index: 7;
+            z-index: 90;
             transition: all 0.2s cubic-bezier(0.09, 0.69, 0, 1.02);
         }
 
@@ -325,7 +327,7 @@
             grid-row: 2;
             grid-auto-flow: column;
             background-color: rgba(26, 26, 26, 0.8);
-            backdrop-filter: blur(32px);
+            backdrop-filter: blur(var(--blurnav));
             z-index: 6;
             height: 36px;
         }
