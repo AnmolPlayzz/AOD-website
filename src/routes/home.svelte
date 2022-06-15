@@ -125,6 +125,7 @@
 		
 </div>
 <style>
+
 	.main {
 		display: flex;
 		flex-direction: column;
@@ -240,7 +241,7 @@
 		padding: 35px;
 		border-radius: 10px;
 		background-color: rgb(22, 22, 22);
-		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+		box-shadow: 0px  0px  30px  rgba(0, 0, 0, 0.5);
 	}
 
 	.anmol {
@@ -270,7 +271,7 @@
 	@media only screen and (max-width: 600px) {
 		.card {
 			flex-direction: column;
-			width: 70vw;
+			width: 60vw;
 		}
 	}
 </style>
