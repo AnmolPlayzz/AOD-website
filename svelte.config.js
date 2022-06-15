@@ -12,7 +12,13 @@ const config = {
 
 export default {
     preprocess: sveltePreprocess(),
+	server: {
+		fsServe: {
+		  root: '../' 
+		}
+	  },
+	ssr: false,
 	kit: {
 		adapter: adapter()	
 	}
-};;
+};
