@@ -270,6 +270,7 @@
 	@media only screen and (max-width: 600px) {
 		.card {
 			flex-direction: column;
+			width: 70vw;
 		}
 	}
 </style>
