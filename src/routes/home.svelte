@@ -79,7 +79,7 @@
 	</section>
 </div>
 
-<div class="homept3">
+<div class="homept3" style="background-color: #1a1a1a;">
 	<div class="homept4">
 		<InfoBadge class="featbadge">
 			<TextBlock variant="body">Timeline</TextBlock>
@@ -112,7 +112,7 @@
 	</section>
 </div>
 
-<div class="homept3">
+<div class="homept3" style="background-color: #1a1a1a;">
 	<div class="homept4">
 		<InfoBadge class="featbadge1">
 			<TextBlock variant="body">Open source</TextBlock>
