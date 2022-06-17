@@ -214,7 +214,8 @@
     }
 
     :global(.li > span > svg) {
-        margin-right: 4px;
+        margin-left: 1px;
+        margin-right: 15px;
     }
 
     :global(.icon) {
