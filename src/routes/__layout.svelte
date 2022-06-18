@@ -6,6 +6,7 @@
     import { Button, Checkbox, IconButton, TextBlock, ListItem } from "fluent-svelte";
     import { onMount } from "svelte/internal";
     import { add_attribute, add_classes, each } from "svelte/internal";
+    import Transition from "$lib/components/transition.svelte";
     import Home from "@fluentui/svg-icons/icons/home_24_regular.svg?raw";
     import News from "@fluentui/svg-icons/icons/news_24_regular.svg?raw";
     import Info from "@fluentui/svg-icons/icons/info_24_regular.svg?raw";
@@ -19,17 +20,22 @@
 
     let showMobileMenu = "hide";
 
+    let transitionstate = "open";
+
     function toggleMobileMenu() {
-        if(showMobileMenu == "show") {
-            showMobileMenu = "hide";
-        } else {
+        if(showMobileMenu == "hide") {
             showMobileMenu = "show";
+        } else {
+            showMobileMenu = "hide";
         }
     }
 
-    $: console.log(showMobileMenu);
+    function delay(miliseconds: number|undefined) {
+        return new Promise(resolve => setTimeout(resolve, miliseconds));
+    }
 
-  $: currentPage = $page.url.pathname;
+    $: console.log(showMobileMenu);
+    $: currentPage = $page.url.pathname;
 
 </script>
 <div class="tn2">
@@ -75,7 +81,7 @@
             class={`${url == "/"
                 ? currentPage.match(url)
                 : url === currentPage ? 'active' : ''} icon`}
-            href={url}>
+            href={url} >
             {@html icon}
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <TextBlock 
@@ -89,10 +95,11 @@
     {/each}
 </div>
 </div>
-        <div>
-        <slot/>
-        </div>
+        <slot />
+
 <style lang="scss">
+
+
 
 /* thx to https://files.community website for thes scrollbar - https://github.com/files-community/Website*/
 
