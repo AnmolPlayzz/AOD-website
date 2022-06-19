@@ -1,4 +1,5 @@
 <script lang="ts">
+    
     import "fluent-svelte/theme.css";
     import { page } from "$app/stores";
     import { fly } from 'svelte/transition';
@@ -30,6 +31,10 @@
         }
     }
 
+    function hideMobileMenu() {
+        showMobileMenu == "hide";
+    }
+
     function delay(miliseconds: number|undefined) {
         return new Promise(resolve => setTimeout(resolve, miliseconds));
     }
@@ -38,6 +43,12 @@
     $: currentPage = $page.url.pathname;
 
 </script>
+
+<svelte:head>
+    <meta property="og:image" content="/round.png">
+    <link rel="icon" href="/round.png" type="image/x-icon">
+</svelte:head>
+
 <div class="tn2">
     <div class="drawer {showMobileMenu}">
         <div class="al">
@@ -65,7 +76,7 @@
         </div>
 
         <IconButton class="mobbtn" on:click={toggleMobileMenu}>
-            <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.75 18h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.5h18.6-18.5zm0-6.5h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.5h18.6-18.5zm0-6.5h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.49h18.6-18.5z"></path></svg>
+            <svg class="menuicon" width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.75 18h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.5h18.6-18.5zm0-6.5h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.5h18.6-18.5zm0-6.5h18.5a.75.75 0 01.1 1.5H2.75a.75.75 0 01-.1-1.49h18.6-18.5z"></path></svg>
         </IconButton>
     </div>
 
@@ -95,8 +106,9 @@
     {/each}
 </div>
 </div>
-        <slot />
-
+<div on:click={hideMobileMenu}>
+    <slot />
+</div>
 <style lang="scss">
 
 
@@ -267,6 +279,8 @@
         font-weight: bold;
     }
 
+
+
     @media only screen and (max-width: 747px) {
         .tn {
             display: none;
@@ -345,6 +359,30 @@
             z-index: 8 !important;
             justify-self: end;
             margin: 13px 2px 15px 2px;
+        }
+
+        @keyframes btnpress {
+            0% {
+                transform: scaleX(1);
+            }
+            50% {
+                transform: scaleX(0.4);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .menuicon {
+            transition: transform .13s cubic-bezier(.16,.16,0,1)
+        }
+
+        :global(.mobbtn:active .menuicon) {
+            transform: scaleX(0.7);
+        }
+
+        :global(.mobbtn1:active svg) {
+            transform: scaleX(0.7);
         }
 
         .mobnav {

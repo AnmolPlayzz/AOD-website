@@ -231,6 +231,14 @@
 		},
 	]
 </script>
+
+<svelte:head>
+<meta name="description" content="All of Art of Dragon's commands!">
+<title>Art of Dragons - Commands</title>
+<meta property="og:image" content="/round.png">
+<link rel="icon" href="/round.png" type="image/x-icon">
+</svelte:head>
+
 <div class="cmds">
 	<div class="parts">
 		<TextBlock class="head" variant="bodyStrong">Misc</TextBlock>
