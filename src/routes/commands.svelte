@@ -316,7 +316,7 @@
 		{/each}	
 	</div>
 	<div class="parts">
-		<TextBlock class="head" variant="bodyStrong">Game</TextBlock>
+		<TextBlock class="head" variant="bodyStrong">Moderation</TextBlock>
 		{#each mod as {name, description, usage}}
 			<Expander>
 				{name}
