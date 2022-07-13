@@ -111,6 +111,11 @@
 </div>
 <style lang="scss">
 
+@media (prefers-color-scheme: light) {
+    * {
+        prefers-color-scheme: dark;
+    }
+}
 
 
 /* thx to https://files.community website for thes scrollbar - https://github.com/files-community/Website*/
