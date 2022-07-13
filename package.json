@@ -3,10 +3,10 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
+		"build": "vite build",
+		"package": "vite package",
+		"preview": "vite preview",
+		"prepare": "vite sync",
 		"check": "svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. .",
@@ -16,6 +16,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"fluent-svelte": "^1.6.0",
+		"mdsvex": "^0.10.5",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
 		"sass": "^1.52.3",
@@ -23,7 +24,7 @@
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.7",
 		"typescript": "~4.6.2",
-		"mdsvex": "^0.10.5"
+		"vite": "^2.9.14"
 	},
 	"type": "module",
 	"dependencies": {
